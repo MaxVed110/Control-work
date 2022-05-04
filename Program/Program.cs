@@ -7,15 +7,15 @@
 
 
 //задание массива
-string[] stringArray = new[] {"hello", "2", "world", ":-)"};
+string[] stringArray = new[] { "hello", "2123", "world", "аа:-)" };
 
 //определить длину нового массива
-int LentchNewArray(string[] array)
+int LengthNewArray(string[] stringArray)
 {
     int lengthNewArray = 0;
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < stringArray.Length; i++)
     {
-        if(array[i].Length<=3)
+        if (stringArray[i].Length <= 3)
         {
             lengthNewArray++;
         }
@@ -23,5 +23,27 @@ int LentchNewArray(string[] array)
     return lengthNewArray;
 }
 
-int a = LentchNewArray(stringArray);
-Console.WriteLine(a);
+//задать новый массив длиной, равной количеству строк исходного массива с длиной <=3
+string[] stringNewArray = new string[LengthNewArray(stringArray)];
+
+// заполнить новый массив
+string[] FillStringArray(string[] stringArray, string[] stringNewArray)
+{
+    int length = stringArray.Length;
+    int index = 0;
+    int lengthNew = stringNewArray.Length;
+    int count = 0;
+    while (index < length)
+    {
+        if (stringArray[index].Length <= 3)
+        {
+            stringNewArray[count] = stringArray[index];
+            count++;
+        }
+        index++;
+    }
+    return stringNewArray;
+}
+
+//напечатать массив
+Console.WriteLine($"[{String.Join(',', FillStringArray(stringArray, stringNewArray))}]");
