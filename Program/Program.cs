@@ -6,9 +6,6 @@
 
 
 
-//задание массива
-string[] stringArray = new[] { "heo", "3", "world", "аа:-)" };
-
 //определить длину нового массива
 int LengthNewArray(string[] stringArray)
 {
@@ -23,11 +20,8 @@ int LengthNewArray(string[] stringArray)
     return lengthNewArray;
 }
 
-//задать новый массив длиной, равной количеству строк исходного массива с длиной <=3
-string[] stringNewArray = new string[LengthNewArray(stringArray)];
-
 // заполнить новый массив
-string[] FillStringNewArray(string[] stringArray, string[] stringNewArray)
+void FillStringNewArray(string[] stringArray, string[] stringNewArray)
 {
     int length = stringArray.Length;
     int index = 0;
@@ -41,8 +35,7 @@ string[] FillStringNewArray(string[] stringArray, string[] stringNewArray)
             count++;
         }
         index++;
-    }
-    return stringNewArray;
+    } 
 }
 
 //напечатать массив
@@ -58,5 +51,12 @@ void PrintStringArray(string[] stringArray)
 
 
 
-stringNewArray = FillStringNewArray(stringArray, stringNewArray);
+
+//задание массива
+string[] stringArray = new[] { "heo", "3", "world", "аа:-)" };
+
+//задать новый массив длиной, равной количеству строк исходного массива с длиной <=3
+string[] stringNewArray = new string[LengthNewArray(stringArray)];
+
+FillStringNewArray(stringArray, stringNewArray);
 PrintStringArray(stringNewArray);
