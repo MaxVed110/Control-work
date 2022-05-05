@@ -7,7 +7,7 @@
 
 
 //задание массива
-string[] stringArray = new[] { "hello", "2123", "world", "аа:-)" };
+string[] stringArray = new[] { "heo", "3", "world", "аа:-)" };
 
 //определить длину нового массива
 int LengthNewArray(string[] stringArray)
@@ -27,7 +27,7 @@ int LengthNewArray(string[] stringArray)
 string[] stringNewArray = new string[LengthNewArray(stringArray)];
 
 // заполнить новый массив
-string[] FillStringArray(string[] stringArray, string[] stringNewArray)
+string[] FillStringNewArray(string[] stringArray, string[] stringNewArray)
 {
     int length = stringArray.Length;
     int index = 0;
@@ -46,4 +46,17 @@ string[] FillStringArray(string[] stringArray, string[] stringNewArray)
 }
 
 //напечатать массив
-Console.WriteLine($"[{String.Join(',', FillStringArray(stringArray, stringNewArray))}]");
+void PrintStringArray(string[] stringArray)
+{
+    Console.Write("[");
+    for (int i = 0; i < stringArray.Length-1; i++)
+    {
+        Console.Write($"'{stringArray[i]}', ");
+    }
+    Console.Write($"'{stringArray[stringArray.Length-1]}']");
+}
+
+
+
+stringNewArray = FillStringNewArray(stringArray, stringNewArray);
+PrintStringArray(stringNewArray);
