@@ -35,25 +35,32 @@ void FillStringNewArray(string[] stringArray, string[] stringNewArray)
             count++;
         }
         index++;
-    } 
+    }
 }
 
 //напечатать массив
 void PrintStringArray(string[] stringArray)
 {
-    Console.Write("[");
-    for (int i = 0; i < stringArray.Length-1; i++)
+    if (stringArray.Length != 0)
     {
-        Console.Write($"'{stringArray[i]}', ");
+        Console.Write("[");
+        for (int i = 0; i < stringArray.Length - 1; i++)
+        {
+            Console.Write($"'{stringArray[i]}', ");
+        }
+        Console.Write($"'{stringArray[stringArray.Length - 1]}']");
     }
-    Console.Write($"'{stringArray[stringArray.Length-1]}']");
+    else
+    {
+        Console.Write("[]");
+    }
 }
 
 
 
 
 //задание массива
-string[] stringArray = new[] { "heo", "3", "world", "аа:-)" };
+string[] stringArray = new[] { "he", "313", "world", "qwer" };
 
 //задать новый массив длиной, равной количеству строк исходного массива с длиной <=3
 string[] stringNewArray = new string[LengthNewArray(stringArray)];
